@@ -1,0 +1,278 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f0f4f8, #d9e4f5);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #d2325e, #0056b3); /* Reddish-pink to dark blue */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+    color: #ffce00;
+}
+
+.btnLogin-popup {
+    padding: 10px 20px;
+    background-color: #ffce00;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btnLogin-popup:hover {
+    background-color: #e0b700;
+}
+
+/* Landing Section */
+.landing-section {
+    text-align: center;
+    margin-top: 120px;
+    padding: 80px 20px;
+    background-color: #ffffff;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.landing-logo {
+    width: 150px;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.landing-section h2 {
+    font-size: 48px;
+    color: #d2325e; /* Reddish-pink */
+}
+
+.landing-section p {
+    font-size: 24px;
+    color: #333;
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+.highlight {
+    color: #ffce00;
+}
+
+/* About Us Section */
+.about-section {
+    background-color: #d2325e; /* Reddish-pink */
+    padding: 60px 20px;
+    color: white;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.about-section p span {
+    color: #ffce00;
+    font-weight: bold;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: #0056b3; /* Dark blue */
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+}
+
+.contact-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contact-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-section ul li {
+    font-size: 18px;
+    margin: 10px 0;
+    font-weight: 300;
+}
+
+/* Forms Section */
+.wrapper {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.form-box {
+    background-color: white;
+    width: 350px;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.form-box h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #0056b3; /* Dark blue */
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    margin-top: 10px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-box input:focus {
+    border-color: #0056b3;
+}
+
+.input-box span.icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    color: #666;
+}
+
+.input-box label {
+    position: absolute;
+    top: 0;
+    left: 35px;
+    font-size: 18px;
+    color: #666;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-box input:focus ~ label, .input-box input:valid ~ label {
+    top: -20px;
+    left: 35px;
+    font-size: 14px;
+    color: #0056b3;
+}
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    background-color: #ffce00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e0b700;
+}
+
+.icon-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.icon-close:hover {
+    color: #0056b3;
+}
+
+.remember-forget {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.login-register {
+    margin-top: 10px;
+}
+
+.login-register a {
+    color: #0056b3; /* Dark blue */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.login-register a:hover {
+    color: #ffce00;
+}
