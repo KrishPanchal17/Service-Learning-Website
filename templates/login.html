@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akshar Paaul - Login Page</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
+    <link rel="stylesheet" type="text/css" href="/static/login.css">
 </head>
 <body>
     <header>
@@ -20,7 +20,7 @@
 
     <!-- Landing Section -->
     <div id="home" class="landing-section">
-        <img src="{{ url_for('static', filename='Akshar Paaul Logo.jpeg') }}" alt="Akshar Paaul Logo" class="landing-logo">
+        <img src="/Akshar Paaul Logo.jpeg" alt="Akshar Paaul Logo" class="landing-logo">
         <h2>Welcome to <span class="highlight">Akshar Paaul</span></h2>
         <p>(अक्षर पाऊल)</p>
     </div>
@@ -84,16 +84,6 @@
                         <ion-icon name="eye-off-outline" id="toggleEye"></ion-icon>
                     </span> -->
                 </div>
-                <!-- Flash Messages Display -->
-                {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                <ul class="flashed-messages">
-                    {% for message in messages %}
-                    <li style="color: red;">{{ message }}</li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-                {% endwith %}
                 <button type="submit" class="btn">Register</button>
                 <div class="login-register">
                     <p>Already have an account? <a href="#" class="login-link">Login</a></p>
@@ -120,7 +110,7 @@
         </ul>
     </section>
 
-    <script src="{{ url_for('static', filename='login.js') }}"></script>
+    <script src=/static/login.js></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
