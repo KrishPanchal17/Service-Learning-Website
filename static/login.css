@@ -7,7 +7,9 @@
 }
 
 body {
-    background: linear-gradient(135deg, #f0f4f8, #d9e4f5);
+    background: url('/static/bg.avif') no-repeat center center fixed, 
+                linear-gradient(135deg, #f0f4f8, #d9e4f5);
+    background-size: cover; /* Ensures the image covers the entire background */
     color: #333;
     min-height: 100vh;
     display: flex;
@@ -15,12 +17,13 @@ body {
     align-items: center;
 }
 
+
 /* Header */
 header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: linear-gradient(90deg, #d2325e, #0056b3); /* Reddish-pink to dark blue */
+    background: linear-gradient(90deg, #e06586, #0056b3);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -68,9 +71,8 @@ header {
     text-align: center;
     margin-top: 120px;
     padding: 80px 20px;
-    background-color: #ffffff;
+    background-color: transparent;
     width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .landing-logo {
@@ -86,7 +88,7 @@ header {
 
 .landing-section h2 {
     font-size: 48px;
-    color: #d2325e; /* Reddish-pink */
+    color: #e06586;
 }
 
 .landing-section p {
@@ -101,11 +103,16 @@ header {
 }
 
 /* About Us Section */
+/* About Us Section */
 .about-section {
-    background-color: #d2325e; /* Reddish-pink */
+    
     padding: 60px 20px;
-    color: white;
+    color: black;
     text-align: center;
+    min-height: 400px; /* Ensure uniform height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .about-section h2 {
@@ -115,10 +122,8 @@ header {
 
 .about-section p {
     font-size: 18px;
-    margin-bottom: 20px;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     line-height: 1.6;
 }
 
@@ -129,10 +134,14 @@ header {
 
 /* Contact Section */
 .contact-section {
-    background-color: #0056b3; /* Dark blue */
+    
     padding: 60px 20px;
     text-align: center;
-    color: white;
+    color: black;
+    min-height: 400px; /* Ensure same height as About Us */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .contact-section h2 {
@@ -149,74 +158,6 @@ header {
     font-size: 18px;
     margin: 10px 0;
     font-weight: 300;
-}
-/* General input box styling for consistency */
-.input-box {
-    position: relative;
-    margin-bottom: 30px;
-}
-
-/* Style for the icon */
-.input-box .icon {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-    color: #666;
-}
-
-/* Style for the select dropdown */
-.input-box select {
-    width: 100%;
-    padding: 10px 35px;  /* Adjust padding for the icon */
-    font-size: 16px;
-    border: none;
-    border-bottom: 2px solid #ccc;
-    background: none;
-    outline: none;
-    color: #333;
-    appearance: none;  /* Remove default dropdown arrow */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
-/* Custom arrow for dropdown */
-.input-box select:after {
-    content: '\25BC'; /* Down arrow */
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 12px;
-    color: #666;
-}
-
-/* Style for the label */
-.input-box label {
-    position: absolute;
-    left: 35px;  /* Adjust for the icon */
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 16px;
-    color: #666;
-    pointer-events: none;
-    transition: 0.5s;
-}
-
-/* Style when dropdown is in focus or has a value */
-.input-box select:focus ~ label,
-.input-box select:valid ~ label {
-    top: -5px;
-    font-size: 12px;
-    color: #333;
-}
-
-/* Optional: style the dropdown options */
-.input-box select option {
-    color: #333;
-    background: #fff;
-    padding: 10px;
 }
 
 
@@ -246,7 +187,7 @@ header {
 .form-box h2 {
     font-size: 24px;
     margin-bottom: 20px;
-    color: #0056b3; /* Dark blue */
+    color: #0056b3;
 }
 
 /* Input Box and Label Styling */
@@ -256,14 +197,13 @@ header {
     margin-bottom: 30px;
 }
 
-/* General style for input, select, and textarea elements */
 .input-box input,
 .input-box select,
 .input-box textarea {
     width: 100%;
-    padding: 10px 10px 10px 40px; /* Padding to avoid overlapping the icon */
+    padding: 10px 10px 10px 40px;
     font-size: 16px;
-    border: 1px solid #ccc; /* Default border color visible */
+    border: 1px solid #ccc;
     outline: none;
     border-radius: 5px;
     background: none;
@@ -271,37 +211,10 @@ header {
     transition: border-color 0.3s ease;
 }
 
-/* Focus state for all input, select, and textarea elements */
 .input-box input:focus,
 .input-box select:focus,
 .input-box textarea:focus {
-    border-color: #0056b3; /* Dark blue on focus */
-}
-
-/* Ensure border is visible when unfocused */
-.input-box input:not(:focus),
-.input-box select:not(:focus),
-.input-box textarea:not(:focus) {
-    border-color: #ccc; /* Visible grey border when unfocused */
-}
-
-/* Style for the select dropdown */
-.input-box select {
-    padding: 10px 35px;  /* Adjust padding for the icon */
-    appearance: none;  /* Remove default dropdown arrow */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
-/* Custom arrow for dropdown */
-.input-box select:after {
-    content: '\25BC'; /* Down arrow */
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 12px;
-    color: #666;
+    border-color: #0056b3;
 }
 
 /* Aligning the icons properly */
@@ -315,7 +228,6 @@ header {
     z-index: 2;
 }
 
-/* Label styling and movement */
 .input-box label {
     position: absolute;
     top: 50%;
@@ -331,12 +243,12 @@ header {
 .input-box input:focus ~ label,
 .input-box input:not(:placeholder-shown) ~ label,
 .input-box select:focus ~ label,
-.input-box select:valid ~ label, /* For select dropdown */
+.input-box select:valid ~ label,
 .input-box textarea:focus ~ label,
 .input-box textarea:not(:placeholder-shown) ~ label {
     top: -11px;
     font-size: 12px;
-    color: #0056b3; /* Dark blue when label moves */
+    color: #0056b3;
 }
 
 /* Button Styling */
@@ -356,7 +268,7 @@ header {
 .btn:hover {
     background-color: #e0b700;
 }
- 
+
 /* Styling for eye icon */
 .eye-icon {
     position: absolute;
@@ -371,11 +283,11 @@ header {
     color: #666;
 }
 
-/* Flash messages*/
+/* Flash messages */
 .flashed-messages {
     margin-top: 5px;
     font-size: 14px;
-    color: red;
+    color: #e06586;
 }
 
 ul.flashed-messages {
@@ -384,9 +296,8 @@ ul.flashed-messages {
 }
 
 ul.flashed-messages li {
-    color: red;
+    color: #e06586;
 }
-
 
 /* Close Icon */
 .icon-close {
@@ -399,70 +310,34 @@ ul.flashed-messages li {
 }
 
 .icon-close:hover {
-    color: #f44336; /* Red on hover */
+    color: #e06586;
 }
 
+/* Remember and Forget styling */
 .remember-forget {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
 }
 
-.login-register {
-    margin-top: 10px;
-}
-
-.login-register a {
-    color: #0056b3; /* Dark blue */
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.login-register a:hover {
-    color: #ffce00;
-}
-
 /* Autofill handling */
 input:-webkit-autofill {
-    background-color: transparent ;
-    -webkit-box-shadow: 0 0 0px 1000px white inset ;
-    box-shadow: 0 0 0px 1000px white inset ;
-    color: #000 ;
-    z-index: 1; /* Input should still be above autofill background */
-}
-
-/* Force the icon color and visibility during autofill */
-input:-webkit-autofill ~ .icon {
-    color: #0056b3 ; /* Force the color of the icon to remain */
-    z-index: 2; /* Ensure the icon is visible above any autofill styling */
-}
-
-/* Adjust the label color on autofill */
-input:-webkit-autofill + label {
-    color: #0056b3 ; /* Force the label to remain visible */
-}
-
-/* Ensure proper box styles are maintained */
-input:-webkit-autofill:focus {
-    border: 1px solid #ccc; /* Your normal border color */
-}
-
-/* General input styling to keep the box normal when autofilled */
-input:-webkit-autofill {
-    transition: background-color 5000s ease-in-out 0s; /* Prevents background-color issues */
-}
-
-/* For Firefox (Mozilla) */
-input:autofill {
-    background-color: transparent ;
-    box-shadow: 0 0 0px 1000px white inset ;
-    color: #000 ;
+    background-color: transparent;
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    box-shadow: 0 0 0px 1000px white inset;
+    color: #000;
     z-index: 1;
 }
 
-/* Fix for input fields when autofilled in other browsers */
-input:autofill + label,
-input:autofill ~ .icon {
-    color: black;
+input:-webkit-autofill ~ .icon {
+    color: #0056b3;
+    z-index: 2;
+}
+
+input:-webkit-autofill + label {
+    color: #0056b3;
+}
+
+input:-webkit-autofill:focus {
+    border: 1px solid #ccc;
 }
