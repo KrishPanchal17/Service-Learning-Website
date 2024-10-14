@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshar Paaul - Login Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
+</head>
+<body>
+    <header>
+        <h2 class="logo">Akshar Paaul</h2>
+        <nav class="navigation">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+            <button class="btnLogin-popup">Login</button>
+        </nav>
+    </header>
+
+    <!-- Landing Section -->
+    <div id="home" class="landing-section">
+        <img src="{{ url_for('static', filename='Akshar Paaul Logo.jpeg') }}" alt="Akshar Paaul Logo" class="landing-logo">
+        <h2>Welcome to <span class="highlight">Akshar Paaul</span></h2>
+        <p>(अक्षर पाऊल)</p>
+    </div>
+
+    <!-- Login/Register Forms -->
+    <div class="wrapper">
+        <!-- Close Icon -->
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+        <!-- Login Form -->
+        <div class="form-box login">
+            <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+            <h2>Login</h2>
+            <form action="/login" method="POST">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" name="username" placeholder="" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" name="password" placeholder="" required>
+                    <label>Password</label>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Register Form -->
+        <div class="form-box register">
+            <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+            <h2>Registration</h2>
+            <form action="/register" method="POST">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" name="username" placeholder="" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" name="email" placeholder="" required>
+                    <label>Email</label>
+                </div>
+                <!-- Dropdown for Role Selection -->
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="briefcase"></ion-icon></span>
+                    <select name="role" id="role" required>
+                        <option  disabled selected></option>
+                        <option value="admin">Admin</option>
+                        <option value="user">User</option>
+                    </select>
+                    <label>Role</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" name="password" id="password" placeholder="" required>
+                    <label>Password</label>
+                    <!-- <span class="eye-icon" onclick="togglePassword()">
+                        <ion-icon name="eye-off-outline" id="toggleEye"></ion-icon>
+                    </span> -->
+                </div>
+                <!-- Flash Messages Display -->
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul class="flashed-messages">
+                    {% for message in messages %}
+                    <li style="color: red;">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% endwith %}
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>Akshar Paaul is dedicated to creating a space where individuals can grow through literacy and education. We strive to provide the best tools and guidance for learning and personal development.</p>
+        <p>Our mission is to empower minds and help people step into a brighter future through knowledge and education. Our team is passionate about making a difference in the community by focusing on accessible education for everyone.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Have any questions or want to know more about Akshar Paaul? Feel free to get in touch with us!</p>
+        <ul>
+            <li>Email: aksharpaaul@gmail.com</li>
+            <li>Phone: +91-8856935553</li>
+            <li>Address: 123 Akshar Paaul Lane, Pune, India</li>
+        </ul>
+    </section>
+
+    <script src="{{ url_for('static', filename='login.js') }}"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
