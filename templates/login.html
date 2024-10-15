@@ -13,6 +13,7 @@
         <nav class="navigation">
             <a href="#home">Home</a>
             <a href="#about">About Us</a>
+            <a href="#vision-mission">Vision & Mission</a>
             <a href="#contact">Contact</a>
             <button class="btnLogin-popup">Login</button>
         </nav>
@@ -20,7 +21,7 @@
 
     <!-- Landing Section -->
     <div id="home" class="landing-section">
-        <img src="/Akshar Paaul Logo.jpeg" alt="Akshar Paaul Logo" class="landing-logo">
+        <img src="/static/Akshar Paaul Logo.jpeg" alt="Akshar Paul Logo" class="landing-logo">
         <h2>Welcome to <span class="highlight">Akshar Paaul</span></h2>
         <p>(अक्षर पाऊल)</p>
     </div>
@@ -44,7 +45,17 @@
                     <input type="password" name="password" placeholder="" required>
                     <label>Password</label>
                 </div>
-                <button type="submit" class="btn">Login</button>
+                <!-- Flash Messages Display -->
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul class="flashed-messages">
+                    {% for message in messages %}
+                    <li style="color: red;">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% endwith %}
+                <button type="submit" class="btn">Register</button>
                 <div class="login-register">
                     <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
                 </div>
@@ -70,7 +81,7 @@
                 <div class="input-box">
                     <span class="icon"><ion-icon name="briefcase"></ion-icon></span>
                     <select name="role" id="role" required>
-                        <option  disabled selected></option>
+                        <option disabled selected></option>
                         <option value="admin">Admin</option>
                         <option value="user">User</option>
                     </select>
@@ -80,9 +91,6 @@
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
                     <input type="password" name="password" id="password" placeholder="" required>
                     <label>Password</label>
-                    <!-- <span class="eye-icon" onclick="togglePassword()">
-                        <ion-icon name="eye-off-outline" id="toggleEye"></ion-icon>
-                    </span> -->
                 </div>
                 <button type="submit" class="btn">Register</button>
                 <div class="login-register">
@@ -97,6 +105,23 @@
         <h2>About Us</h2>
         <p>Akshar Paaul is dedicated to creating a space where individuals can grow through literacy and education. We strive to provide the best tools and guidance for learning and personal development.</p>
         <p>Our mission is to empower minds and help people step into a brighter future through knowledge and education. Our team is passionate about making a difference in the community by focusing on accessible education for everyone.</p>
+    </section>
+
+    <!-- Vision and Mission Section -->
+    <section id="vision-mission" class="vision-mission-section">
+        <h2>Our Mission</h2>
+        <ul>
+            <li>Helping children take their first step towards literacy.</li>
+            <li>Providing emotional security to children alongside education.</li>
+            <li>Spreading awareness among parents about their children's education.</li>
+            <li>Bringing awareness to children about their rights.</li>
+        </ul>
+        <h2>Our Vision</h2>
+        <ul>
+            <li>Supporting sustainable education for underprivileged children.</li>
+            <li>Ensuring every child starts their education at the correct age.</li>
+            <li>Bridging the gap between underprivileged children and mainstream education.</li>
+        </ul>
     </section>
 
     <!-- Contact Section -->
