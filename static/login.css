@@ -7,7 +7,7 @@
 }
 
 body {
-    background: url('/static/bg.avif') no-repeat center center fixed, 
+    background: url('/static/bg2.jpg') no-repeat center center fixed, 
                 linear-gradient(135deg, #f0f4f8, #d9e4f5);
     background-size: cover; /* Ensures the image covers the entire background */
     color: #333;
@@ -67,19 +67,30 @@ header {
 }
 
 /* Landing Section */
+/* Landing Section */
 .landing-section {
-    text-align: center;
+    background: rgba(0, 0, 0, 0.3); /* Add some transparency */
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center; /* Center the text content */
+    align-items: center; /* Align vertically in the center */
+    flex-direction: column; /* Ensures text remains stacked vertically */
     margin-top: 120px;
     padding: 80px 20px;
-    background-color: transparent;
+    position: relative; /* Allows absolute positioning of the logo */
     width: 100%;
+    text-align: center; /* Ensures text is centered */
 }
 
+/* Landing Logo */
 .landing-logo {
-    width: 150px;
-    margin-bottom: 20px;
+    width: 200px;
+    position: absolute;
+    top: 20px; /* Adjusts position from top */
+    right: 20px; /* Positions the logo at the right edge */
     animation: fadeIn 1.5s ease;
 }
+
 
 @keyframes fadeIn {
     from { opacity: 0; }
@@ -93,7 +104,7 @@ header {
 
 .landing-section p {
     font-size: 24px;
-    color: #333;
+    color: white;
     margin-top: 10px;
     font-weight: 300;
 }
@@ -105,19 +116,24 @@ header {
 /* About Us Section */
 /* About Us Section */
 .about-section {
-    
+    background: rgba(0, 0, 0, 0.3); /* Add some transparency */
+    backdrop-filter: blur(5px);/* Light background with slight transparency */
     padding: 60px 20px;
-    color: black;
+    color: rgb(255, 255, 255);
     text-align: center;
     min-height: 400px; /* Ensure uniform height */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-radius: 10px; /* Soft corners */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 20px 0; /* Adds spacing from other sections */
 }
 
 .about-section h2 {
     font-size: 36px;
     margin-bottom: 20px;
+    color: #ffce00; /* Color for heading */
 }
 
 .about-section p {
@@ -125,6 +141,7 @@ header {
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
+    color: white; /* Make text color slightly darker for better readability */
 }
 
 .about-section p span {
@@ -132,21 +149,59 @@ header {
     font-weight: bold;
 }
 
-/* Contact Section */
-.contact-section {
-    
+/* Vision and Mission Section */
+.vision-mission-section {
     padding: 60px 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.3); /* Add some transparency */
+    backdrop-filter: blur(5px); /* Optional: Adds a subtle blur effect */
     text-align: center;
-    color: black;
-    min-height: 400px; /* Ensure same height as About Us */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    border-radius: 10px;
+    margin: 40px 0;
+}
+
+.vision-mission-section h2 {
+    font-size: 36px;
+    color: #ffce00;  /* Highlight the headings */
+    margin-bottom: 20px;
+}
+
+.vision-mission-section ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.vision-mission-section ul li {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* Contact Section - Fixed at the Bottom */
+.contact-section {
+     /* Light background with transparency */
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.3); /* Add some transparency */
+    backdrop-filter: blur(5px);
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    margin: 60px 0;  /* Adds some space before the contact section */
 }
 
 .contact-section h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.contact-section p, .contact-section ul li {
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .contact-section ul {
@@ -155,8 +210,7 @@ header {
 }
 
 .contact-section ul li {
-    font-size: 18px;
-    margin: 10px 0;
+    margin: 5px 0;
     font-weight: 300;
 }
 
@@ -172,7 +226,9 @@ header {
     height: 100%;
     width: 100%;
     background: rgba(0, 0, 0, 0.6);
+    z-index: 9999; /* Set a high z-index to ensure it appears on top */
 }
+
 
 .form-box {
     background-color: white;
@@ -283,11 +339,11 @@ header {
     color: #666;
 }
 
-/* Flash messages */
+/* Flash messages*/
 .flashed-messages {
     margin-top: 5px;
     font-size: 14px;
-    color: #e06586;
+    color: red;
 }
 
 ul.flashed-messages {
@@ -296,7 +352,7 @@ ul.flashed-messages {
 }
 
 ul.flashed-messages li {
-    color: #e06586;
+    color: red;
 }
 
 /* Close Icon */
